@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/dist/styles/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/ag-grid-community/dist/ag-grid-community.min.js"></script>
+    <script src="/dist/scripts/scripts.js" defer></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="root">
+        <div class="header">
+            <h1>welcome to the worldwide holiday</h1>
+            <div class="inputArea">
+                <div class="input-container">
+                    <input type="text" placeholder="Enter the country name" id="input" class="input">
+                    <div class="error" id="country-error"></div>
+                </div>
+                <div class="input-container">
+                    <input type="text" placeholder="Enter the year" id="date" class="input">
+                    <div class="error" id="year-error"></div>
+                </div>
+                <button id="enter" class="btn">Enter</button>
+                <button id="reset" class="btn">Reset</button>
+            </div>
+        </div>
+        <div class='displayArea'>
+            <h2 class="countryInfo">Next 7 days Holiday of The World</h2>
+            <div class="table">
+                <div id="left-container" class="ag-theme-quartz" style="width:900px; height: 600px; text-align:start">
+                </div>
+                <div id='right-container' class="ag-theme-quartz" style="width:900px; height: 600px;  text-align:start">
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>

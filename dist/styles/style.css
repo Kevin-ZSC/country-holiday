@@ -1,0 +1,99 @@
+.ag-header-cell {
+  min-width: 300px;
+}
+
+body {
+  background-color: rgb(6, 189, 245);
+  text-align: center;
+}
+body h1 {
+  font-family: Helvetica, sans-serif;
+  color: rgb(97, 43, 224);
+}
+body .inputArea {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+body .input-container {
+  margin-right: 10px;
+}
+body input {
+  max-width: 220px;
+  height: 30px;
+  border-radius: 10px;
+  border: none;
+}
+body .btn {
+  width: 50px;
+  height: 30px;
+  border-radius: 20%;
+  border: none;
+  margin-right: 10px;
+  color: rgb(194, 185, 185);
+  background-color: rgb(97, 43, 224);
+}
+body .btn:hover {
+  cursor: pointer;
+  background-color: rgb(120, 253, 11);
+  color: black;
+}
+body .error {
+  display: none;
+  margin-top: 5px;
+  color: red;
+  font-size: 14px;
+}
+body .displayArea {
+  text-align: center;
+  margin: 0 auto;
+  max-width: 900px;
+  padding: 20px;
+}
+body .displayArea h2 {
+  font-size: 20px;
+  margin: 0;
+  color: rgb(120, 253, 11);
+}
+body .displayArea .table {
+  margin: 20px auto;
+}
+body .displayArea #left-container {
+  max-width: 100%;
+  display: block;
+}
+body .displayArea #left-container .ag-theme-quartz {
+  --ag-foreground-color: rgb(14, 68, 145);
+  --ag-background-color: rgba(241, 247, 255);
+  --ag-header-background-color: rgba(228, 237, 250);
+  --ag-row-hover-color: rgba(0, 38, 255, 0.1);
+}
+body .displayArea #right-container {
+  max-width: 100%;
+  display: none;
+}
+body .displayArea #right-container .ag-theme-quartz {
+  --ag-foreground-color: rgb(14, 68, 145);
+  --ag-background-color: rgba(241, 247, 255);
+  --ag-header-background-color: rgba(228, 237, 250);
+  --ag-row-hover-color: rgba(0, 38, 255, 0.1);
+}
+@media (max-width: 576px) {
+  body .inputArea {
+    display: block;
+  }
+  body .inputArea .input {
+    margin-top: 10px;
+  }
+  body .inputArea .btn {
+    margin-top: 10px;
+  }
+  body .inputArea #left-container, body .inputArea #right-container {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  body .ag-header-cell {
+    max-width: 50px;
+  }
+}

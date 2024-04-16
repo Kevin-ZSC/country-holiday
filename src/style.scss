@@ -1,0 +1,167 @@
+$primary-color: rgb(6, 189, 245);
+$base-color: rgb(194, 185, 185);
+$base-color1: black;
+$second-color: rgb(120, 253, 11);
+$third-color: rgb(97, 43, 224);
+$font-stack: Helvetica, sans-serif;
+
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+
+@mixin respond-to-sm {
+  @media (max-width: $breakpoint-sm) {
+    @content;
+  }
+}
+
+@mixin respond-to-md {
+  @media (max-width: $breakpoint-md) {
+    @content;
+  }
+}
+
+@mixin respond-to-lg {
+  @media (max-width: $breakpoint-lg) {
+    @content;
+  }
+}
+
+@mixin respond-to-xl {
+  @media (max-width: $breakpoint-xl) {
+    @content;
+  }
+}
+
+@mixin inputfield {
+  max-width: 200px;
+  height: 30px;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+
+  &:hover {
+    cursor: pointer;
+    box-shadow: inset;
+  }
+}
+
+@mixin btn {
+  width: 50px;
+  height: 30px;
+  border-radius: 20%;
+  border: none;
+  margin-right: 10px;
+  color: $base-color;
+  background-color: $third-color;
+
+  &:hover {
+    cursor: pointer;
+    background-color: $second-color;
+    color: black;
+  }
+}
+
+@mixin tableStyle () {
+  --ag-foreground-color: rgb(14, 68, 145);
+  --ag-background-color: rgba(241, 247, 255);
+  --ag-header-background-color: rgba(228, 237, 250);
+  --ag-row-hover-color: rgba(0, 38, 255, 0.1);
+}
+
+.ag-header-cell {
+  min-width: 300px; 
+}
+body {
+  background-color: $primary-color;
+  text-align: center;
+
+  h1 {
+    font-family: $font-stack;
+    color: $third-color;
+  }
+
+  .inputArea {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .input-container {
+    margin-right: 10px;
+  }
+
+  input {
+    max-width: 220px;
+    height: 30px;
+    border-radius: 10px;
+    border: none;
+  }
+
+  .btn {
+    @include btn();
+  }
+
+  .error {
+    display: none;
+    margin-top: 5px;
+    color: red;
+    font-size: 14px;
+  }
+
+  .displayArea {
+    text-align: center;
+    margin: 0 auto;
+    max-width: 900px;
+    padding: 20px;
+
+    h2 {
+      font-size: 20px;
+      margin: 0;
+      color: $second-color;
+    }
+
+    .table {
+      margin: 20px auto;
+    }
+
+    #left-container {
+      max-width: 100%;
+      display: block;
+
+      .ag-theme-quartz {
+        @include tableStyle();
+      }
+    }
+
+    #right-container {
+      max-width: 100%;
+      display: none;
+
+      .ag-theme-quartz {
+        @include tableStyle();
+      }
+    }
+  }
+  @include respond-to-sm {
+    .ag-header-cell {
+      max-width: 50px; 
+    }
+    .inputArea {
+      display: block;
+      .input {
+        margin-top: 10px;
+      }
+      .btn{
+        margin-top: 10px;
+      }
+      #left-container, #right-container {
+        width: 100%; 
+        margin: 0; 
+        padding: 0; 
+      }
+    }
+  }
+
+}
